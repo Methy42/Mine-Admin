@@ -1,0 +1,35 @@
+/*panel*/
+.panel{
+	color: #fff;
+	width: 100%;
+	background: rgba(0,0,0,0.35);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	font-size: 11px;
+	margin-bottom: 0.5%;
+}
+.panel .title{
+	background: rgba(0,0,0,0.35);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0;
+    padding: 7px 10px 7px;
+}
+.panel a{
+	opacity: 0.5;
+}
+.panel a:hover{
+	opacity: 1;
+}
+.panel .close{
+	float: right;
+}
+.panel .body{
+	padding: 5px 21px;
+}
+main .sidebar .panel{
+	margin: 10px 0px;
+	background: transparent;
+}
+main .sidebar .panel,main .sidebar .panel .title{
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+}

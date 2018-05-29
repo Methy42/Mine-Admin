@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <red>文章</red>
+    <script>
+        (function(){
+            var Socket = new WebSocket("ws://broadcast.chat.bilibili.com:4090/sub");
+            Socket.onopen = function(){
+                // Web Socket 已连接上，使用 send() 方法发送数据
+                Socket.send("发送数据");
+                console.log("数据发送中...");
+            };
+            
+            Socket.onmessage = function (evt){ 
+                var received_msg = evt.data;
+                console.log("数据已接收...",received_msg);
+            };
+        })()
+    </script>
+</body>
+</html>

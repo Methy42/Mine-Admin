@@ -1,0 +1,318 @@
+*{
+	font-weight: 100;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	background: url("../image/bg/greenish.jpg");
+	background-size: 100% 100%;
+    background-attachment: fixed;
+}
+aside{
+	width: 45px;
+	background: rgba(0,0,0,0.5);
+}
+aside a{
+	color: #fff;
+	display: block;
+	line-height: 50px;
+	background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.55;
+    text-decoration: none;
+}
+aside a:hover{
+	width: auto;
+}
+aside a.light{
+	opacity: 1;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.text-center{
+	text-align: center;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+small{
+	font-size: 85%;
+}
+.pull-right{
+	display: block;
+	float: right;
+}
+*::-webkit-scrollbar{
+	display: none;
+}
+iframe{
+	border: 0px;
+	width: 100%;
+	height: auto;
+}
+
+/*header*/
+header{
+	height: 50px;
+}
+header .logo{
+	width: 233px;
+	float: left;
+}
+header .logo aside{
+	height: 50px;
+	float: left;
+}
+header .logo aside a{
+	height: 50px !important;
+}
+
+header .logo article{
+	height: 50px;
+	margin-left: 45px;
+	background: rgba(0,0,0,0.23);
+	text-align: center;
+	-webkit-app-region: drag
+}
+header .logo article a{
+	display: block;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	line-height: 50px;
+	text-decoration: none;
+}
+header nav{
+	height: 50px;
+	border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+header nav a{
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 100;
+}
+header nav a span{
+	display: block;
+	width: 0px;
+	line-height: 50px;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: width 300ms;
+	-webkit-transition:width 300ms;
+}
+header nav a:hover span{
+	width: 70px;
+}
+header .search{
+	height: 50px;
+	overflow: scroll;
+}
+header .search input{
+	color: #fff;
+	font-size: 16px;
+	width: 0px;
+	height: 100%;
+	margin-left: 10px;
+	padding-left: 36px;
+	border: 0px;
+	background-color: transparent;
+	background-image: url(../image/icon/search.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: width 300ms,background-color 300ms;
+	-webkit-transition:width 300ms,background-color 300ms;
+}
+header .search input:focus{
+	border: 0px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+header .time{
+	color: #fff;
+	height: 30px;
+	float: right;
+	text-align: center;
+	padding: 10px;
+}
+header .time span{
+	font-size: 20px;
+	line-height: 30px;
+}
+
+@media (max-width: 780px){
+	header .logo{
+		width: 100%;
+		float: none;
+	}
+}
+
+
+
+
+/*main*/
+main aside{
+	position: absolute;
+	top: 51px;
+	bottom: 0px;
+	z-index: 2;
+	transition: left 300ms;
+}
+main aside a{
+    position: relative;
+}
+main aside a span{
+	color: #fff;
+	font-size: 14px;
+	display: block;
+	position: absolute;
+	padding: 0px 10px;
+	top: -1000px;
+	left: 60px;
+	width: 150px;
+	height: 42px;
+	background: rgba(0,0,0,0.95);
+	opacity: 0;
+	transition: left 300ms,opacity 300ms;
+	line-height: 42px;
+	z-index: 2;
+}
+main aside a:hover span{
+	top: 0px;
+	left: 45px;
+	opacity:0.5;
+}
+main aside a.active,main aside a:hover{
+	background-color: rgba(0,0,0,0.95);
+	opacity: 1;
+}
+main .sidebar{
+	width: 188px;
+	position: absolute;
+	top: 51px;
+	left: 45px;
+	bottom: 0px;
+	background: rgba(0,0,0,0.3);
+	overflow: scroll;
+	transition: left 300ms;
+}
+main .sidebar .user{
+	margin-bottom: 10px;
+}
+main .sidebar .user .avatar{
+	text-align: center;
+}
+main .sidebar .user .avatar img{
+	width: 108px;
+    margin: 9px 0 4px;
+    border-radius: 100px !important;
+    border: 6px solid rgba(0,0,0,0.2);
+}
+
+main .sidebar .user .avatar img:hover {
+    -webkit-animation-name: tada;
+    animation-name: tada;
+    z-index: 100;
+}
+main .sidebar .user .avatar a{
+	display: block;
+    height: 130px;
+}
+main .sidebar .user .info{
+	color: #fff;
+	text-align: center;
+}
+main .content{
+	position: absolute;
+	top: 51px;
+	left: 233px;
+	bottom: 0px;
+	right: 0px;
+	overflow: scroll;
+	padding: 0.5%;
+	transition: left 300ms;
+}
+main.active aside{
+	left: -45px;
+}
+main.active .sidebar{
+	left: -233px;
+}
+main.active .content{
+	left: 0px;
+}
+@media (max-width: 780px){
+	main aside{
+		left: -45px;
+		background: rgba(0,0,0,1);
+	}
+	main.active aside{
+		left: 0px;
+	}
+	main .sidebar{
+		left: -233px;
+		background: rgba(0,0,0,0.7);
+	    z-index: 1;
+	}
+	main.active .sidebar{
+		left: 45px;
+	}
+	main .content{
+		left: 0px;
+		top: 101px;
+	}
+}
+
+
+
+/*list*/
+.list{
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}
+.list li{
+	display: block;
+	margin: 0;
+    padding: 7px 10px 7px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+.no-bd li{
+	border-top: 0px;
+	padding: 3px 10px 3px;
+}
+.list li:first-child{
+    border-top: 0px;
+}
+
+/*table*/
+table,table *{
+	border: 0px;
+}
+table{
+	width: 100%;
+	border-collapse:collapse;
+	margin: 5px 0px;
+}
+table td{
+	border-top: 1px solid rgba(255,255,255,0.15);
+}
+table tr:first-child td{
+	border-top: 0px;
+}
+table th{
+	border-bottom:  2px solid rgba(255,255,255,0.15);
+	font-weight: bold;
+}
+table td{
+	text-align: center;
+}
